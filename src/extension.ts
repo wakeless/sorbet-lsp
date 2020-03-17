@@ -102,7 +102,9 @@ export function activate(context: ExtensionContext) {
 			synchronize: {
 				// Notify the server about changes to relevant files in the workspace
 				fileEvents: workspace.createFileSystemWatcher('{**/*.rb,**/*.gemspec,**/Gemfile}')
-			}
+			},
+      outputChannelName: 'Sorbet Language Server',
+      revealOutputChannelOn: RevealOutputChannelOn.Never,
 		};
 
 		// Create the language client and start the client.
