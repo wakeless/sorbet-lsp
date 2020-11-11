@@ -1,13 +1,13 @@
 {
-  "name": "sorbet-lsp",
-  "description": "Sorbet language server",
+  "name": "wakeless-sorbet-lsp",
+  "description": "Sorbet language server (fork of https://github.com/danhuynhdev/sorbet-lsp)",
   "author": "Tan Huynh",
-  "publisher": "danhuynhdev",
+  "publisher": "wakeless",
   "license": "MIT",
-  "version": "0.1.4",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danhuynhdev/sorbet-lsp"
+    "url": "https://github.com/wakeleess/sorbet-lsp"
   },
   "categories": [],
   "keywords": [
@@ -61,9 +61,11 @@
   "scripts": {
     "update-vscode": "node ./node_modules/vscode/bin/install",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "vscode:prepublish": "npm run update-vscode && npm run compile",
+    "vscode:prepublish": "$npm_execpath run update-vscode && $npm_execpath run compile",
     "compile": "tsc -b",
-    "watch": "tsc -b -w"
+    "watch": "tsc -b -w",
+    "publish:build": "vsce package --yarn",
+    "publish": "vsce publish --yarn"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
