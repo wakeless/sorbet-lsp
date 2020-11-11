@@ -1,6 +1,6 @@
 # Sorbet LSP
 
-Simple LSP extension for sorbet
+Simple LSP extension for sorbet - supports multiple workspace folders
 
 # How to install
 
